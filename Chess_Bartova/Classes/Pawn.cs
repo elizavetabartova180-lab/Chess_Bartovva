@@ -10,10 +10,10 @@ namespace Chess_Bartova.Classes
         public int X, Y;
         public bool Select, Black;
         public Grid Figure;
-        public Pawn(int x, int y, bool Black)
+        public Pawn (int X, int Y, bool Black)
         {
-            this.X = x; 
-            this.Y = y; 
+            this.X = X; 
+            this.Y = Y; 
             this.Black = Black;
         }
 
@@ -41,14 +41,14 @@ namespace Chess_Bartova.Classes
             if (Select)
             {
                 if (Black)
-                    Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Images/Pawn(black).png")));
+                    Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\student-A502.PERMAVIAT\Desktop\Chess_Bartova\Chess_Bartova\Images\Pawn (black).png")));
                 else
-                    Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Images/Pawn.png")));
+                    Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\student-A502.PERMAVIAT\Desktop\Chess_Bartova\Chess_Bartova\Images\Pawn.png")));
                 Select = false;
             }
             else
             {
-                Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Images/Pawn(select).png")));
+                Figure.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\student-A502.PERMAVIAT\Desktop\Chess_Bartova\Chess_Bartova\Images\Pawn (select).png")));
                 Select = true;
             }
         }
