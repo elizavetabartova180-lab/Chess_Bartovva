@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System;
 
 namespace Chess_Bartova.Classes
 {
@@ -10,14 +11,14 @@ namespace Chess_Bartova.Classes
         public int X, Y;
         public bool Select, Black;
         public Grid Figure;
-        public Pawn (int X, int Y, bool Black)
+        public Pawn(int X, int Y, bool Black)
         {
-            this.X = X; 
-            this.Y = Y; 
+            this.X = X;
+            this.Y = Y;
             this.Black = Black;
         }
 
-        public void SelectFigure(object semder, MouseButtonEventArgs e)
+        public void SelectFigure(object sender, MouseButtonEventArgs e)
         {
             bool atack = false;
             Pawn SelectPawn = MainWindow.init.Pawns.Find(x => x.Select == true);
@@ -55,12 +56,12 @@ namespace Chess_Bartova.Classes
 
         public void Transform(int X, int Y)
         {
-            if(X!= this.X)
+            if (X != this.X)
             {
                 SelectFigure(null, null);
-                return ;
+                return;
             }
-            if(Black &&((this.Y == 6 && this.Y -2 == Y)|| this.Y - 1 == Y)||
+            if (Black && ((this.Y == 6 && this.Y - 2 == Y) || this.Y - 1 == Y) ||
                !Black && ((this.Y == 1 && this.Y + 2 == Y) || this.Y + 1 == Y))
             {
                 Grid.SetColumn(Figure, X);
